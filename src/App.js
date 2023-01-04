@@ -38,7 +38,10 @@ function App() {
 
     let data = await response.json();
     if (data.status_code === 200) {
-      sessionStorage.setItem("userDetail", JSON.stringify(data.data.user));
+      sessionStorage.setItem(
+        "userDetail",
+        JSON.stringify(data.data.user.full_name)
+      );
       navigate("/user");
       setLoading(false);
       return;
